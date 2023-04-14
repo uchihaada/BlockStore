@@ -39,7 +39,7 @@ function App() {
         const contract = new ethers.Contract(
           contractAdress, Upload.abi, signer
         )
-        console.log(contract);
+        // console.log(contract);
         setContract(contract);
         setProvider(provider);
       } else {
@@ -68,8 +68,8 @@ function App() {
       <div className="App">
         <h1 style={{ color: "white" }}>BlockStore</h1>
         <div className="bg"></div>
-        <div className="bg bg2"></div>
-        <div className="bg bg3"></div>
+        <div className="bg bg2"></div> 
+        <div className="bg bg3"></div> 
 
         <p style={{ color: "white" }}>Account:{account ? account : "Not Connected"}</p>
         <FileUpload account={account} provider={provider} contract={contract}></FileUpload>

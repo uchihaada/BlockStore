@@ -7,7 +7,7 @@ import "./FileUpload.css";
 const FileUpload = ({ contract, provider, account }) => {
 
     const [file, setFile] = useState(null)
-    const [fileName, setFileName] = useState("No Files Selected")
+    const [fileName, setFileName] = useState("No Images Selected")
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -30,13 +30,13 @@ const FileUpload = ({ contract, provider, account }) => {
 
                 const ImgHash = `https://gateway.pinata.cloud/ipfs/${resFile.data.IpfsHash}`;
                 contract.add(account, ImgHash);
-                alert("Successfully File Uploaded");
-                setFileName("No file selected");
+                alert("Successfully Image Uploaded");
+                setFileName("No image selected");
                 setFile(null);
 
             } catch (e) {
                 console.error(e);
-                alert("Unable to upload file");
+                alert("Unable to upload image");
             }
         }
     }
@@ -57,11 +57,11 @@ const FileUpload = ({ contract, provider, account }) => {
     return <div className="top">
         <form className="form" onSubmit={handleSubmit}>
             <label htmlFor="file-upload" className="choose">
-                Choose File
+                Choose Image
             </label>
             <input disabled={!account} type="file" id="file-upload" name="data" onChange={retrieveFile} ></input>
             <span className="textArea">Name:{fileName}</span>
-            <button type="submit" className="upload" disabled={!file}>Upload File</button>
+            <button type="submit" className="upload" disabled={!file}>Upload Image</button>
         </form>
 
     </div>;

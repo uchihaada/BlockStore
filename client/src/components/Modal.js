@@ -25,15 +25,8 @@ const Modal = ({ setModalOpen, contract }) => {
                 const newel = document.createElement("option");
 
                 newel.innerText = opt;
-                // console.log("1");
-                console.log(newel.innerText);
                 newel.textContent = opt;
-                // console.log("2");
-                // console.log(newel.textContent);
-                // newel.value = opt;
-                // console.log("3");
-                // console.log(newel.value);
-
+                newel.value = opt;
                 select.appendChild(newel);
             }
 
@@ -55,8 +48,8 @@ const Modal = ({ setModalOpen, contract }) => {
                 </form>
                 <div className="footer">
                     <button onClick={() => { setModalOpen(false) }} id="cancelBtn">Cancel</button>
-                    <button onClick={() => sharing()}>Share  Access</button>
-                    <button onClick={() => abort()}>Abort  Access</button>
+                    <button  onClick={() => sharing()} className="sg" >Share  Access</button>
+                    <button  onClick={() => abort()} style={{backgroundColor:"crimson"}}>Abort  Access</button>
                 </div>
 
             </div>

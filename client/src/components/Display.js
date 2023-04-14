@@ -26,16 +26,17 @@ const Display = ({ contract, account }) => {
         if (!isEmpty) {
             const str = dataArray.toString();
             const str_array = str.split(",");
-            console.log(str);
-            console.log(str_array);
+            // console.log(str);
+            // console.log(str_array);
             const file = str_array.map((item, i) => {
                 return (
 
                     <a href={item} key={i} target="_blank" rel="noreferrer">
                         <img key={i} src={item}
-                            alt="new"
+                            alt="File"
                             className="image-list"
                         ></img>
+                        
 
                     </a>
                 )
@@ -48,10 +49,10 @@ const Display = ({ contract, account }) => {
         }
     }
     return <>
-        <div className="image-list">{data}</div>
+        <div className="image-list"  >{data}</div>
         <input type="text" placeholder="Enter Address" className="address"></input>
         <button className="center button" onClick={getData}>
-            Show Files
+            Get Images
         </button>
 
 
